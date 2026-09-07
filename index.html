@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Krish 🎁</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="space"></canvas>
+  <div class="cursor-glow"></div>
+
+  <main>
+    <section class="page active" id="page1">
+      <div class="hero">
+        <div class="eyebrow">A SECRET MESSAGE IS WAITING</div>
+        <h1>Hey <span>Krish</span> 👋</h1>
+        <p>Tonight, this little corner of the internet belongs to you.</p>
+
+        <div class="gift-scene">
+          <div class="gift-shadow"></div>
+          <div class="gift">
+            <div class="lid">
+              <div class="ribbon"></div>
+              <div class="bow left"></div>
+              <div class="bow right"></div>
+            </div>
+            <div class="box">
+              <div class="ribbon"></div>
+            </div>
+          </div>
+        </div>
+
+        <button id="openBtn">OPEN THE SURPRISE <span>✦</span></button>
+        <div class="hint">Click the box to begin</div>
+      </div>
+    </section>
+
+    <section class="page" id="page2">
+      <div class="hero reveal">
+        <div class="eyebrow">THE MOMENT HAS ARRIVED</div>
+        <h2 class="birthday-title">HAPPY<br><span>BIRTHDAY</span></h2>
+        <div class="name">BHAI</div>
+
+        <div class="cake-scene">
+          <div class="cake-glow"></div>
+          <div class="cake">
+            <div class="flame"></div>
+            <div class="candle"></div>
+            <div class="icing"></div>
+            <div class="tier top"></div>
+            <div class="tier bottom"></div>
+          </div>
+        </div>
+
+        <p class="tagline">Another year. More memories. More reasons to smile. ✨</p>
+        <button id="nextBtn">THERE'S MORE →</button>
+      </div>
+    </section>
+
+    <section class="page" id="page3">
+      <div class="message-card">
+        <div class="card-top">✦ A LITTLE NOTE ✦</div>
+        <div class="emoji">🎁</div>
+        <h2>Dear <span>Krishna</span>,</h2>
+        <p id="typedMessage"></p>
+        <div class="signature">— TUMHARA BHAI ❤️</div>
+        <button id="againBtn">↻ EXPERIENCE AGAIN</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="progress">
+    <span class="dot active"></span><span class="line"></span>
+    <span class="dot"></span><span class="line"></span><span class="dot"></span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

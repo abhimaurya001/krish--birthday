@@ -1,0 +1,55 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--cyan:#00eaff;--violet:#8b5cff;--pink:#ff35c8;--muted:#9aa0aa}
+html,body{width:100%;height:100%;overflow:hidden}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;background:#030409;color:#fff}
+canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+body:before,body:after{content:"";position:fixed;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:0}
+body:before{width:35vw;height:35vw;background:#5a00ff;opacity:.14;top:-15vw;left:-10vw}
+body:after{width:30vw;height:30vw;background:#00d9ff;opacity:.1;right:-10vw;bottom:-10vw}
+main{position:relative;z-index:2;width:100%;height:100%}
+.page{position:absolute;inset:0;display:grid;place-items:center;padding:25px;opacity:0;visibility:hidden;transform:perspective(1200px) rotateY(90deg) scale(.82);transition:opacity .7s ease,transform 1s cubic-bezier(.2,.85,.2,1),visibility .7s}
+.page.active{opacity:1;visibility:visible;transform:perspective(1200px) rotateY(0) scale(1)}
+.hero{text-align:center;max-width:800px}
+.eyebrow,.card-top{font-size:11px;letter-spacing:5px;color:#aeb3bd;margin-bottom:20px}
+h1{font-size:clamp(52px,9vw,105px);line-height:.95;letter-spacing:-4px}
+h1 span,.birthday-title span,.message-card h2 span{background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink));-webkit-background-clip:text;color:transparent}
+.hero>p{color:var(--muted);margin-top:22px;font-size:16px;line-height:1.7}
+button{border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.055);color:#fff;border-radius:999px;padding:15px 25px;font-weight:800;letter-spacing:2px;cursor:pointer;backdrop-filter:blur(12px);transition:.3s;box-shadow:0 0 30px rgba(0,234,255,.08)}
+button:hover{transform:translateY(-4px) scale(1.04);background:rgba(255,255,255,.11);box-shadow:0 0 40px rgba(0,234,255,.2)}
+button span{color:var(--cyan);margin-left:8px}
+.hint{font-size:11px;color:#666;margin-top:13px;letter-spacing:2px}
+.gift-scene{height:260px;display:grid;place-items:center;perspective:1000px}
+.gift{width:170px;height:145px;position:relative;transform-style:preserve-3d;animation:float 3s ease-in-out infinite}
+.gift-shadow{position:absolute;width:190px;height:25px;background:#000;filter:blur(18px);opacity:.8;transform:translateY(105px)}
+.box{position:absolute;left:10px;bottom:0;width:150px;height:105px;border:1px solid #555;background:linear-gradient(135deg,#10131a,#343744);box-shadow:inset 0 0 30px #000,0 30px 60px #000;transform:translateZ(20px)}
+.ribbon{position:absolute;left:62px;top:0;width:26px;height:100%;background:linear-gradient(90deg,var(--cyan),var(--violet));box-shadow:0 0 20px rgba(0,234,255,.25)}
+.lid{position:absolute;z-index:4;left:0;top:25px;width:170px;height:35px;border:1px solid #777;background:linear-gradient(135deg,#252936,#4b4e59);transform:translateZ(25px) rotateX(8deg)}
+.lid .ribbon{top:0;height:100%}
+.bow{position:absolute;top:-20px;width:55px;height:40px;border:8px solid var(--cyan);border-radius:50%;filter:drop-shadow(0 0 10px var(--cyan))}
+.bow.left{left:35px;transform:rotate(25deg)}
+.bow.right{left:80px;transform:rotate(-25deg)}
+@keyframes float{0%,100%{transform:translateY(0) rotateY(-8deg)}50%{transform:translateY(-18px) rotateY(8deg)}}
+.birthday-title{font-size:clamp(48px,9vw,100px);line-height:.82;letter-spacing:-3px}
+.name{font-size:15px;letter-spacing:12px;color:#aeb3bd;margin-top:18px}
+.cake-scene{height:180px;display:grid;place-items:center;perspective:700px}
+.cake{width:210px;height:145px;position:relative}
+.tier{position:absolute;left:5px;width:200px;border:1px solid #666;background:linear-gradient(135deg,#17191f,#575a66);box-shadow:inset 0 -10px 20px #090a0d,0 20px 35px #000}
+.tier.bottom{bottom:5px;height:65px;border-radius:10px}
+.tier.top{bottom:60px;left:15px;width:180px;height:48px;border-radius:10px 10px 7px 7px}
+.icing{position:absolute;z-index:3;left:15px;bottom:92px;width:180px;height:24px;border-radius:50%;background:linear-gradient(90deg,var(--cyan),var(--violet));box-shadow:0 0 30px rgba(0,234,255,.25)}
+.candle{position:absolute;z-index:5;left:98px;bottom:112px;width:13px;height:42px;background:repeating-linear-gradient(45deg,#fff 0 5px,#777 5px 10px)}
+.flame{position:absolute;z-index:6;left:95px;bottom:151px;width:20px;height:30px;border-radius:50% 50% 50% 0;background:var(--cyan);transform:rotate(-45deg);box-shadow:0 0 30px var(--cyan);animation:flame .45s alternate infinite}
+@keyframes flame{to{transform:rotate(-45deg) scale(1.15)}}
+.cake-glow{position:absolute;width:200px;height:100px;background:var(--cyan);filter:blur(70px);opacity:.1}
+.tagline{color:#aeb3bd;line-height:1.7;margin-top:0}
+.message-card{max-width:720px;text-align:center;padding:42px 48px;border:1px solid rgba(255,255,255,.14);background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));border-radius:30px;backdrop-filter:blur(24px);box-shadow:0 30px 100px #000;animation:card 4s ease-in-out infinite}
+@keyframes card{50%{transform:translateY(-7px) rotateX(1deg)}}
+.emoji{font-size:45px;margin:4px 0 10px}
+.message-card h2{font-size:clamp(36px,6vw,58px);letter-spacing:-2px}
+#typedMessage{min-height:230px;margin-top:25px;color:#d0d3da;line-height:1.85;font-size:15px;white-space:pre-line}
+.signature{color:#fff;font-weight:700;margin-top:10px}
+.progress{position:fixed;z-index:10;bottom:22px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px}
+.dot{width:7px;height:7px;border-radius:50%;background:#555;transition:.3s}.dot.active{background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+.line{width:25px;height:1px;background:#444}
+.cursor-glow{position:fixed;z-index:1;width:220px;height:220px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(0,234,255,.09),transparent 65%);transform:translate(-50%,-50%)}
+@media(max-width:600px){.page{padding:16px}.message-card{padding:30px 20px;max-height:88vh;overflow:auto}.eyebrow,.card-top{letter-spacing:3px}.name{letter-spacing:7px}.gift-scene{height:220px}#typedMessage{min-height:260px;font-size:14px}}
